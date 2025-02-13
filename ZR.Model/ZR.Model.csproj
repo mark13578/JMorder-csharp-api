@@ -7,6 +7,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Business\Order.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="MiniExcel" Version="1.32.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="SqlSugarCoreNoDrive" Version="5.1.4.157" />

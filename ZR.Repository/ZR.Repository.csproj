@@ -5,6 +5,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Business\IOrderRepository.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\Infrastructure\ZR.Infrastructure.csproj" />
 		<ProjectReference Include="..\ZR.Model\ZR.Model.csproj" />
 	</ItemGroup>

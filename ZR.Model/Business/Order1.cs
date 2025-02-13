@@ -3,7 +3,7 @@ using ZR.Model.Business;
 namespace ZR.Model.Business
 {
     /// <summary>
-    /// 建立訂單
+    /// 建立工單
     /// </summary>
     [SugarTable("order_1")]
     public class Order1
@@ -11,7 +11,7 @@ namespace ZR.Model.Business
         /// <summary>
         /// 流水號 
         /// </summary>
-        [SugarColumn(IsPrimaryKey = false, IsIdentity = true)]
+        [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public int DocEntry { get; set; }
 
         /// <summary>
@@ -32,11 +32,13 @@ namespace ZR.Model.Business
         /// <summary>
         /// 客戶編號 
         /// </summary>
+        [SugarColumn(IsOnlyIgnoreUpdate = true)]
         public string CustomerID { get; set; }
 
         /// <summary>
         /// 客戶名稱 
         /// </summary>
+        [SugarColumn(IsOnlyIgnoreUpdate = true)]
         public string CustomerName { get; set; }
 
         /// <summary>
@@ -177,10 +179,10 @@ namespace ZR.Model.Business
         [Navigate(NavigateType.OneToMany, nameof(Order2.DocEntry), nameof(DocEntry))] //自定义关系映射
         public List<Order2> Order2Nav { get; set; }
 
-        //[Navigate(NavigateType.OneToMany, nameof(Order3.DocEntry), nameof(DocEntry))] //自定义关系映射
-        //public List<Order3> Order3Nav { get; set; }
+        [Navigate(NavigateType.OneToMany, nameof(Order3.DocEntry), nameof(DocEntry))] //自定义关系映射
+        public List<Order2> Order3Nav { get; set; }
 
-        //[Navigate(NavigateType.OneToMany, nameof(Order4.DocEntry), nameof(DocEntry))] //自定义关系映射
-        //public List<Order4> Order4Nav { get; set; }
+        [Navigate(NavigateType.OneToMany, nameof(Order2.DocEntry), nameof(DocEntry))] //自定义关系映射
+        public List<Order4> Order4Nav { get; set; }
     }
 }

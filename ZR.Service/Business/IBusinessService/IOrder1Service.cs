@@ -4,7 +4,7 @@ using ZR.Model.Business;
 namespace ZR.Service.Business.IBusinessService
 {
     /// <summary>
-    /// 建立訂單service接口
+    /// 建立工單service接口
     /// </summary>
     public interface IOrder1Service : IBaseService<Order1>
     {
@@ -17,5 +17,6 @@ namespace ZR.Service.Business.IBusinessService
         int UpdateOrder1(Order1 parm);
 
 
+        PagedInfo<Order1Dto> ExportList(Order1QueryDto parm);
     }
 }
